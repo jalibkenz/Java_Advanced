@@ -45,6 +45,7 @@ class Babye {
 @ComponentScan(basePackages = "com.example.springioc")
 class MyConfigurationz {
 
+   
 }
 
 //class TestBabye{}
@@ -58,11 +59,16 @@ public class App2 {
         Babye b2 = ac.getBean(Babye.class);
         b2.open();
 
+        Babye b3 = (Babye) ac.getBean("babye"); // if not using Babye.class, then (Babye) ac.getBean("babye"); 
+        b3.open();
+
         if (ac instanceof AnnotationConfigApplicationContext) {
             ((AnnotationConfigApplicationContext) ac).close();
         }
 
         System.out.println("Checking if Singleton design is practised-> "+(b1==b2));
+
+
 
     }
 }
