@@ -1,6 +1,7 @@
 public class Prajwal {
     public static void main(String[] args) {
         System.out.println("Prajwal");
+        System.out.println("Prajwal.java");
     }
     
 }
@@ -11,6 +12,6 @@ class Manjunath{
     for jvm to easily identify the main()
     */
     void disp(){
-        System.out.println("Manjunath");
+        System.out.println("Manjunath");System.out.println("Reporting from Prajwal.java");
     }
 }
