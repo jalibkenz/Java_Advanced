@@ -4,7 +4,7 @@ public class Prajwal {
     }
     
 }
-public class Manjunath{
+class Manjunath{
     void disp(){
         System.out.println("Manjunath");
     }
