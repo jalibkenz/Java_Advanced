@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Scrap Book</title>
+</head>
+<body>
+    <h1>Scrap-Book App</h1>
+
+    <form action="/saveScrap" method="post">
+    <label for="mobile">Mobile:</label>
+    <input type="text" id="mobile" name="mobile" required><br><br>
+
+    <label for="scrapMsg">Message:</label>
+    <input type="text" id="scrapMsg" name="scrapMsg" required><br><br>
+
+    <button type="submit">Save Scrap</button>
+</form>
+
+    <p th:text="${message}"></p>
+</body>
+</html>

@@ -1,0 +1,4 @@
+✅ Difference:
+	•	extends Thread: your class becomes a Thread.
+	•	implements Runnable: your class can be run by a Thread without becoming a Thread itself.
+	•	Using Runnable is generally preferred, because Java only allows single inheritance, and extending Thread prevents extending another class.
