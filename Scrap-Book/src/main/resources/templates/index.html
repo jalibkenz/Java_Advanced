@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scrap Book</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-    <h1>Scrap-Book App</h1>
+    <div class="container">
+        <h1>Scrap Book</h1>
 
-    <form action="/saveScrap" method="post">
-    <label for="mobile">Mobile:</label>
-    <input type="text" id="mobile" name="mobile" required><br><br>
+        <form id="scrapForm" action="/saveScrap" method="post">
+            <div class="form-group">
+                <label for="mobile">Mobile:</label>
+                <input type="text" id="mobile" name="mobile" required placeholder="Enter 10-digit mobile number">
+                <span class="error" id="mobileError"></span>
+            </div>
 
-    <label for="scrapMsg">Message:</label>
-    <input type="text" id="scrapMsg" name="scrapMsg" required><br><br>
+            <div class="form-group">
+                <label for="scrapMsg">Message:</label>
+                <input type="text" id="scrapMsg" name="scrapMsg" required placeholder="Enter your message">
+                <span class="error" id="msgError"></span>
+            </div>
 
-    <button type="submit">Save Scrap</button>
-</form>
+            <button type="submit">Send Scrap</button>
+        </form>
 
-    <p th:text="${message}"></p>
+        <p th:text="${message}" class="server-message"></p>
+    </div>
+
+    <script src="/js/script.js"></script>
 </body>
 </html>

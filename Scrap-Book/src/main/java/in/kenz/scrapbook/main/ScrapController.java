@@ -21,7 +21,7 @@ public class ScrapController {
     @PostMapping("/saveScrap")
     public String saveScrap(@ModelAttribute Scrap scrap, Model model) {
         repo.save(scrap);
-        model.addAttribute("message", "Scrap saved successfully!");
+        model.addAttribute("message", "Scrap written to Jalib's ScrapBook successfully!");
         return "index"; // reload index.html with message
     }
 }
