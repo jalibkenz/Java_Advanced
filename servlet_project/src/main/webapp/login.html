@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #f0f4f8, #d9e8fc);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        background-color: #ffffff;
+        padding: 40px 50px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        width: 400px;
+        text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 30px;
+        color: #333;
+        font-size: 28px;
+    }
+
+    .input-group {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .input-group i {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        color: #888;
+    }
+
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 12px 12px 12px 40px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        transition: 0.3s;
+        box-sizing: border-box;
+    }
+
+    input:focus {
+        border-color: #4CAF50;
+        box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        outline: none;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .buttons button {
+        width: 48%;
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+        color: #fff;
+    }
+
+    .submit {
+        background-color: #4CAF50;
+    }
+
+    .submit:hover {
+        background-color: #45a049;
+        transform: translateY(-2px);
+    }
+
+    .cancel {
+        background-color: #f44336;
+    }
+
+    .cancel:hover {
+        background-color: #e53935;
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 480px) {
+        .container {
+            width: 90%;
+            padding: 30px 20px;
+        }
+        .buttons {
+            flex-direction: column;
+        }
+        .buttons button {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Login</h2>
+    <form action="LoginServlet" method="post">
+        <div class="input-group">
+            <i class="fa fa-user"></i>
+            <input type="text" name="username" placeholder="Enter Username" required>
+        </div>
+        <div class="input-group">
+            <i class="fa fa-lock"></i>
+            <input type="password" name="password" placeholder="Enter Password" required>
+        </div>
+        <div class="buttons">
+            <button type="submit" class="submit">Login</button>
+            <button type="reset" class="cancel">Cancel</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
