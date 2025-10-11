@@ -9,18 +9,13 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import servlet_project.dao.EmployeeDao;
 
-@WebServlet("/fid")
-public class FindById extends HttpServlet {
+@WebServlet("/dall")
+public class DeleteAll extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String id=req.getParameter("pk");
-		int cid=Integer.parseInt(id) ;
-		
-		
-		EmployeeDao employeeDao=new EmployeeDao();
-		Object msg=employeeDao.findById(cid);
-		
+		EmployeeDao employeeDao = new EmployeeDao();
+		String msg = employeeDao.deleteAll();
 		resp.getWriter().print(msg);
 	}
 }

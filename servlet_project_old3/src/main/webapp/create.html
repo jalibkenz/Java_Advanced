@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Create Account</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #f0f4f8, #d9e8fc);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        background-color: #ffffff;
+        padding: 40px 50px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        width: 400px;
+        text-align: center;
+    }
+
+    h1 {
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    form input[type="text"],
+    form input[type="number"],
+    form input[type="email"],
+    form input[type="password"],
+    form select {
+        width: 100%;
+        padding: 12px 15px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-sizing: border-box;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    form input:focus,
+    form select:focus {
+        border-color: #4CAF50;
+        box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        outline: none;
+    }
+
+    .gender {
+        text-align: left;
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    .buttons {
+        margin-top: 20px;
+    }
+
+    .buttons button {
+        width: 45%;
+        padding: 12px;
+        margin: 5px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .buttons button.submit {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .buttons button.submit:hover {
+        background-color: #45a049;
+        transform: translateY(-2px);
+    }
+
+    .buttons button.cancel {
+        background-color: #f44336;
+        color: white;
+    }
+
+    .buttons button.cancel:hover {
+        background-color: #e53935;
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 480px) {
+        .container {
+            width: 90%;
+            padding: 30px 20px;
+        }
+
+        .buttons button {
+            width: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Create Account</h1>
+    <form action="i" method="post">
+        <input type="number" placeholder="Enter ID" name="eid" required>
+        <input type="text" placeholder="Enter Name" name="ename" required>
+        <input type="email" placeholder="Enter Email" name="empemail" required>
+        <input type="password" placeholder="Enter Password" name="emppassword" required>
+
+        <div class="gender">
+            <label>Male: <input type="radio" name="gender" value="male" required></label>
+            <label style="margin-left:20px;">Female: <input type="radio" name="gender" value="female" required></label>
+        </div>
+
+        <select name="coun" required>
+            <option value="" disabled selected>Select Country</option>
+            <option value="IND">IND</option>
+            <option value="PAK">PAK</option>
+            <option value="CHN">CHN</option>
+        </select>
+
+        <div class="buttons">
+            <button type="submit" class="submit">Submit</button>
+            <button type="reset" class="cancel">Cancel</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

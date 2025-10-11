@@ -1,9 +1,7 @@
 package servlet_project.controller;
 
-import java.awt.geom.Rectangle2D;
 import java.io.IOException;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
@@ -15,13 +13,13 @@ import jakarta.servlet.annotation.WebServlet;
 public class Dummy implements Servlet {
 
 	public Dummy() {
-		//System.out.println("dummy class is loaded & object has been created");
+		System.out.println("dummy class is loaded & object has been created");
 	}
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
-		//System.out.println("init() method is invoked");
+		System.out.println("init() method is invoked");
 	}
 
 	@Override
@@ -33,11 +31,7 @@ public class Dummy implements Servlet {
 	@Override
 	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//System.out.println("service() is invoked, req is accepted & resp is sent");
-	
-		RequestDispatcher requestDispatcher=req.getRequestDispatcher("http://www.facebook.com");
-		requestDispatcher.forward(req, res);
-		
+		System.out.println("service() is invoked, req is accepted & resp is sent");
 	}
 
 	@Override
@@ -49,7 +43,7 @@ public class Dummy implements Servlet {
 	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub
-		//System.out.println("destroy() is invoked & dummy class object is destroyed");
+		System.out.println("destroy() is invoked & dummy class object is destroyed");
 	}
 
 }

@@ -26,6 +26,5 @@ public class FetchAll extends HttpServlet {
 		
 		RequestDispatcher requestDispatcher=req.getRequestDispatcher("display.jsp");
 		requestDispatcher.forward(req, resp);
-		
 	}
 }

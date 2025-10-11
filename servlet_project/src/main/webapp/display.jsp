@@ -6,87 +6,33 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Employee List</title>
-<style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f4f6f8;
-        margin: 20px;
-    }
-
-    h1 {
-        text-align: center;
-        color: #333;
-        margin-bottom: 30px;
-    }
-
-    table {
-        border-collapse: collapse;
-        width: 90%;
-        margin: 0 auto;
-        background-color: #fff;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        border-radius: 8px;
-        overflow: hidden;
-    }
-
-    th, td {
-        padding: 12px 20px;
-        text-align: left;
-    }
-
-    th {
-        background-color: #4CAF50;
-        color: white;
-        text-transform: uppercase;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f9f9f9;
-    }
-
-    tr:hover {
-        background-color: #e0f7fa;
-        transition: 0.3s;
-    }
-
-    td {
-        color: #555;
-    }
-
-    @media (max-width: 768px) {
-        table, th, td {
-            font-size: 14px;
-        }
-    }
-</style>
+<title>Insert title here</title>
 </head>
 <body> 
-<h1>Employee List</h1>
-<% 
-    List<Employee> employees = (List<Employee>) request.getAttribute("objects");
-    if(employees != null && !employees.isEmpty()) {
-%>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Gender</th>
-        <th>Country</th>
-    </tr>
-    <% for(Employee u : employees){ %>
-    <tr>
-        <td><%= u.getId() %></td>
-        <td><%= u.getName() %></td>
-        <td><%= u.getEmail() %></td>
-        <td><%= u.getGender() %></td>
-        <td><%= u.getCountry() %></td>
-    </tr>
-    <% } %>
+<%List<Employee> a=(List<Employee>)request.getAttribute("objects");%>
+<table border="">
+<tr>
+<th>id</th>
+<th>name</th>
+<th>email</th>
+<th>gender</th>
+<th>password</th>
+<th>country</th>
+<th>delete</th>
+<th>update</th>
+</tr>
+<%for(Employee u:a){ %>
+<tr>
+<td><%=u.getId()%></td>
+<td><%=u.getName()%></td>
+<td><%=u.getEmail()%></td>
+<td><%=u.getGender()%></td>
+<td><%=u.getPassword()%></td>
+<td><%=u.getCountry()%></td>
+<td><a href="did?pk=<%=u.getId()%>">remove</a></td>
+<td><a href="update.jsp?id=<%=u.getId()%>&&name=<%=u.getName()%>&&email=<%=u.getEmail()%>&&password=<%=u.getPassword()%>">edit</a></td>
+<%} %>
+</tr>
 </table>
-<% } else { %>
-    <p style="text-align:center; color:#777; font-size:18px;">No employees found.</p>
-<% } %>
 </body>
 </html>

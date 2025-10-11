@@ -17,7 +17,7 @@ public class EmployeeDao {
 
 	public String insert(Employee employee) {
 		entityTransaction.begin();
-		entityManager.persist(employee);
+		entityManager.persist(employee); // persist to create a new and merge() to update to the existing data
 		entityTransaction.commit();
 		return "account created successfully";
 	}
@@ -65,9 +65,4 @@ public class EmployeeDao {
 		}
 	}
 
-	public void update(Employee employee) {
-		entityTransaction.begin();
-		entityManager.merge(employee);
-		entityTransaction.commit();
-	}
 }
