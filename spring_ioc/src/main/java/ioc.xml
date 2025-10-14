@@ -27,6 +27,14 @@
 		<constructor-arg name="id" value="2"></constructor-arg>
 		<constructor-arg name="name" value="Kenz"></constructor-arg>
 	</bean>
+	
+	
+	<bean id="m" class="in.kenz.springioc.Mobile">
+		<property name="airtel" ref="a"></property>
+	</bean>
+	
+	<bean id="a" class="in.kenz.springioc.Airtel">
+	</bean>
 
 
 </beans>
